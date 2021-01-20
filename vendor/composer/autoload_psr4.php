@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'voku\\' => array($vendorDir . '/voku/portable-ascii/src/voku'),
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'jeremykenedy\\laravelexceptionnotifier\\' => array($vendorDir . '/jeremykenedy/laravel-exception-notifier/src'),
     'jeremykenedy\\laravel2step\\' => array($vendorDir . '/jeremykenedy/laravel2step/src'),
     'jeremykenedy\\LaravelRoles\\' => array($vendorDir . '/jeremykenedy/laravel-roles/src'),

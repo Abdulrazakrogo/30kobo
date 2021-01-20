@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '66a78171f392accdf486c482ad69655fb0c53099',
+    'reference' => 'f424a0242773050e59b3175443aaaecf162ea103',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -639,7 +639,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '66a78171f392accdf486c482ad69655fb0c53099',
+      'reference' => 'f424a0242773050e59b3175443aaaecf162ea103',
     ),
     'laravel/socialite' => 
     array (
@@ -661,12 +661,12 @@ private static $installed = array (
     ),
     'laravel/ui' => 
     array (
-      'pretty_version' => 'v2.3.0',
-      'version' => '2.3.0.0',
+      'pretty_version' => 'v3.2.0',
+      'version' => '3.2.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '2ccaa3b821ea8ac7e05393b946d0578bdb46099b',
+      'reference' => 'a1f82c6283c8373ea1958b8a27c3d5c98cade351',
     ),
     'laravelcollective/html' => 
     array (
@@ -1008,8 +1008,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
