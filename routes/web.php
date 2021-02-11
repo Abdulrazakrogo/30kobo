@@ -109,6 +109,12 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
         ],
     ]);
 
+    Route::resource('/updates', \App\Http\Controllers\UpdatesController::class, [
+        'only' => [
+            'index', 'create', 'show', 'update', 'destroy', 'store',
+        ],
+    ]);
+
     Route::resource('users', \App\Http\Controllers\UsersManagementController::class, [
         'names' => [
             'index'   => 'users',
