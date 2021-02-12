@@ -56,6 +56,10 @@ Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'chec
     //  Homepage Route - Redirect based on user role is in controller.
     Route::get('/home', ['as' => 'public.home',   'uses' => 'App\Http\Controllers\UserController@index']);
 
+    //Recoed Range Search route
+    Route::get('/daterange', 'App\Http\Controllers\UserController@index');
+    Route::post('/daterange/fetch_data', 'App\Http\Controllers\UserController@fetch_data')->name('daterange.fetch_data');
+
     // Show users profile - viewable by other users.
     Route::get('profile/{username}', [
         'as'   => '{username}',

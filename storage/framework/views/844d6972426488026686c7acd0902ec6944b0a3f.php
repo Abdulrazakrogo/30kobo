@@ -156,69 +156,37 @@ $abuja_eur_live = $abuja_usd * $eur;
 <div class="row">
   <div class="col-12 col-xl-12 mb-4 mb-lg-0">
       <div class="card">
-          <h5 class="card-header">Latest transactions</h5>
+          <h5 class="card-header">Recent History</h5>
           <div class="card-body">
               <div class="table-responsive">
                   <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">Order</th>
-                          <th scope="col">Product</th>
-                          <th scope="col">Customer</th>
-                          <th scope="col">Total</th>
                           <th scope="col">Date</th>
-                          <th scope="col"></th>
+                          <th scope="col">CBN Rates</th>
+                          <th scope="col">Lagos/Airport</th>
+                          <th scope="col">Lagos/lagos Island</th>
+                          <th scope="col">Lagos Victoria Island</th>
+                          <th scope="col">Kano</th>
+                          <th scope="col">Abuja</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">17371705</th>
-                          <td>Volt Premium Bootstrap 5 Dashboard</td>
-                          <td>johndoe@gmail.com</td>
-                          <td>€61.11</td>
-                          <td>Aug 31 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17370540</th>
-                          <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                          <td>jacob.monroe@company.com</td>
-                          <td>$153.11</td>
-                          <td>Aug 28 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17371705</th>
-                          <td>Volt Premium Bootstrap 5 Dashboard</td>
-                          <td>johndoe@gmail.com</td>
-                          <td>€61.11</td>
-                          <td>Aug 31 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17370540</th>
-                          <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                          <td>jacob.monroe@company.com</td>
-                          <td>$153.11</td>
-                          <td>Aug 28 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17371705</th>
-                          <td>Volt Premium Bootstrap 5 Dashboard</td>
-                          <td>johndoe@gmail.com</td>
-                          <td>€61.11</td>
-                          <td>Aug 31 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17370540</th>
-                          <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                          <td>jacob.monroe@company.com</td>
-                          <td>$153.11</td>
-                          <td>Aug 28 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
+                        
+                        <?php $__currentLoopData = $updates; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $update): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <tr>
+                                <td><?php echo e($update->updated_at); ?></td>
+                                <td><?php echo e($update->island_usd); ?></td>
+                                <td><?php echo e($update->airport_usd); ?></td>
+                                <td><?php echo e($update->island_usd); ?></td>
+                                <td><?php echo e($update->victoria_usd); ?></td>
+                                <td><?php echo e($update->kano_usd); ?></td>
+                                <td><?php echo e($update->abuja_usd); ?></td>
+                                <td>
+                            </tr>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        
+                       
                       </tbody>
                     </table>
               </div>

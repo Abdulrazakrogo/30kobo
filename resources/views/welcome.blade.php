@@ -9,6 +9,8 @@
     <title>ThirtyKobo  </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Custom Stylesheet -->
 
 
@@ -75,7 +77,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                 <div class="row">
                     <div class="col-xl-12 position-relative">
                         <nav class="navbar navbar-expand-lg navbar-light px-0">
-                            <a class="navbar-brand" href="landing.html"><img src="./images/logo.png" alt=""></a>
+                            <a class="navbar-brand" href="https://www.thirtykobo.com"><img src="./images/logo.png" alt=""></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -300,7 +302,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                                         <div class="buyer-info">
                                             <div class="media">
                                                 <div class="media-body">
-                                                    <h4>Parallel market rates by location</h4>
+                                                    <h4>Parallel market <br>rates by location</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -323,7 +325,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                                                         <img class="mr-3" src="./images/ngn.png" alt="" width="30"><br>
                                                         <div class="media-body">
                                                             <h5>NGN</h5>
-                                                            <h6>Market Exist</h6>
+                                                            <h6>Market Locatio</h6>
                                                         </div>
                                                     </div>
                                                     </th>
@@ -503,7 +505,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                                                         <img class="mr-3" src="./images/ngn.png" alt="" width="30"><br>
                                                         <div class="media-body">
                                                             <h5>NGN</h5>
-                                                            <h6></h6>
+                                                            <h6>&nbsp;</h6>
                                                         </div>
                                                     </div>
                                                     </th>
@@ -719,7 +721,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                                     <div class="col-xl-6 col-md-6">
                                         <div class="customer-review px-4">
                                             <img class="img-fluid" src="./images/brand/3.webp" alt="">
-                                            <p>MEW is excited to bring Treemium ’s extensive range of Treemium o assets,
+                                            <p>MEW is excited to bring Treemium â€™s extensive range of Treemium o assets,
                                                 competitive rates and seamless swap functionality</p>
                                             <div class="customer-info">
                                                 <h5>Mr Abraham</h5>
@@ -821,7 +823,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                 <div class="row align-items-center">
                     <div class="col-xl-12 text-center text-lg-right">
                         <div class="copy_right text-center text-lg-center">
-                            Copyright © 2021 ThirtyKobo. All Rights Reserved. Powered by <a href="https://www.easylife.ng">EasyLife Creative Studio</a>
+                            Copyright Â© 2021 ThirtyKobo. All Rights Reserved. Powered by <a href="https://www.easylife.ng">EasyLife Creative Studio</a>
                         </div>
                     </div>
                 </div>
