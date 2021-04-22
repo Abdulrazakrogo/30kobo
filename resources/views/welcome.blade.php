@@ -23,13 +23,11 @@
    </script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-   
-</head>
 
-<?php
+   <?php
 // set API Endpoint and API key 
 $endpoint = 'latest';
-$api_key = 'a6bb4b1df7d2b18bcb1d56778654cb87';
+$api_key = '82191452465d124d16c65fd640a682db';
 $base_currency = 'EUR';
 
 // Initialize CURL:
@@ -45,7 +43,7 @@ $result = json_decode($json, true);
 
 // Accessing the exchange rate values, e.g. USD from response.:
 
-$usd = $result['rates']['GBP'];
+$usd = $result['rates']['USD'];
 $eur = $result['rates']['USD'];
 $usd_blackM = $usd+20;
 //echo "USD black market".$usd_blackM;
@@ -66,6 +64,7 @@ $abuja_gdp_live = $abuja_usd * $usd;
 $abuja_eur_live = $abuja_usd * $eur;
 
 ?>
+   
 
 <body>
 
@@ -302,7 +301,6 @@ $abuja_eur_live = $abuja_usd * $eur;
 </head>
 
 
-
 <div>Black Market(EUR):  <xy id="EUR"></xy></div>
 <br />
 <div>Black Market(GBP):  <xy id="GBP"></xy></div>
@@ -314,7 +312,7 @@ $abuja_eur_live = $abuja_usd * $eur;
 function Initialize() {
   setTimeout(function(){ 
    $.ajax({
-     url: 'https://thirtykobo.com/api',
+     url: 'api',
      type: 'get',
      success: function(response0){
       document.getElementById("EUR").innerHTML = "<font color='#000'>"+response0.EUR+"</font>";
@@ -328,13 +326,13 @@ function Initialize() {
 Initialize();
 function fetchdata(){
     $.ajax({
-     url: 'https://thirtykobo.com/api',
+     url: 'api',
      type: 'get',
      success: function(response){  
 
         setInterval(function () {
          $.ajax({
-     url: 'https://thirtykobo.com/api',
+     url: 'api',
      type: 'get', 
      success: function(responseJson){ 
         if(response.EUR > responseJson.EUR){
@@ -352,20 +350,20 @@ function fetchdata(){
 
         setInterval(function () {
          $.ajax({
-     url: 'https://thirtykobo.com/api',
+     url: 'api',
      type: 'get', 
      success: function(responseJson0){
 
       if(responseJson.EUR > responseJson0.EUR){
-         document.getElementById("EUR").innerHTML = "<font color='red'>"+responseJson.EUR+"</font>";
+         document.getElementById("EUR").innerHTML = "<font color='red'>"+responseJson0.EUR+"</font>";
         }else{
-         document.getElementById("EUR").innerHTML = "<font color='green'>"+responseJson0.EUR+"</font>";
+         document.getElementById("EUR").innerHTML = "<font color='green'>"+responseJson.EUR+"</font>";
         }
-        
+        console.log(responseJson0.EUR)
         if(responseJson.GBP > responseJson.GBP){
-         document.getElementById("GBP").innerHTML = "<font color='red'>"+responseJson.GBP+"</font>";
+         document.getElementById("GBP").innerHTML = "<font color='red'>"+responseJson0.GBP+"</font>";
         }else{
-         document.getElementById("GBP").innerHTML = "<font color='green'>"+responseJson0.GBP+"</font>";
+         document.getElementById("GBP").innerHTML = "<font color='green'>"+responseJson.GBP+"</font>";
         }
 
      }
@@ -375,7 +373,7 @@ function fetchdata(){
      }
    })
 
-        }, 2000);
+        }, 10000);
 
 
      }
@@ -386,9 +384,6 @@ function fetchdata(){
     setInterval(fetchdata,20000);
    });
 </script>
-
-
-
 
 
 
