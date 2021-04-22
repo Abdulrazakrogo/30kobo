@@ -115,7 +115,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
 
     Route::resource('/updates', \App\Http\Controllers\UpdatesController::class, [
         'only' => [
-            'index', 'create', 'show', 'update', 'destroy', 'store',
+            'index', 'create', 'show', 'update', 'destroy', 'store', 'api',
         ],
     ]);
 
@@ -141,5 +141,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('routes', 'App\Http\Controllers\AdminDetailsController@listRoutes');
     Route::get('active-users', 'App\Http\Controllers\AdminDetailsController@activeUsers');
 });
+
+Route::get('api', '\App\Http\Controllers\UpdatesController@api');
 
 Route::redirect('/php', '/phpinfo', 301);

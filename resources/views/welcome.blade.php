@@ -16,6 +16,13 @@
 
     <link rel="stylesheet" href="./vendor/owlcarousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+               crossorigin="anonymous">
+   </script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
    
 </head>
 
@@ -89,7 +96,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                                     <li class="nav-item">
                                         <a class="nav-link active" href="#" data-scroll-nav="0">Home</a>
                                     </li>
-                                    <!--<li class="dropdown">
+                                    <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Parallel Market Rates</span> <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
@@ -108,13 +115,13 @@ $abuja_eur_live = $abuja_usd * $eur;
                                                 <a class="nav-link" href="#" data-scroll-nav="3">Abuja</a>
                                             </li>
                                         </ul>
-                                    </li> -->
-                                    <li class="nav-item">
+                                    </li> 
+                                   <!-- <li class="nav-item">
                                         <a class="nav-link" href="#" data-scroll-nav="2">Parallel Market Rates</a>
-                                    </li>
+                                    </li> 
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" data-scroll-nav="21">Interbank Rates</a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" data-scroll-nav="1">CBN rates</a>
                                     </li>
@@ -282,6 +289,111 @@ $abuja_eur_live = $abuja_usd * $eur;
             </div>
         </div>
 
+
+
+
+
+
+        <!DOCTYPE html>
+<head>
+<title> eXchnage </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+
+
+<div>Black Market(EUR):  <xy id="EUR"></xy></div>
+<br />
+<div>Black Market(GBP):  <xy id="GBP"></xy></div>
+
+ 
+
+<script>
+
+function Initialize() {
+  setTimeout(function(){ 
+   $.ajax({
+     url: 'https://thirtykobo.com/api',
+     type: 'get',
+     success: function(response0){
+      document.getElementById("EUR").innerHTML = "<font color='#000'>"+response0.EUR+"</font>";
+      document.getElementById("GBP").innerHTML = "<font color='#000'>"+response0.GBP+"</font>";
+
+     }
+   });
+
+   }, 1000);
+};
+Initialize();
+function fetchdata(){
+    $.ajax({
+     url: 'https://thirtykobo.com/api',
+     type: 'get',
+     success: function(response){  
+
+        setInterval(function () {
+         $.ajax({
+     url: 'https://thirtykobo.com/api',
+     type: 'get', 
+     success: function(responseJson){ 
+        if(response.EUR > responseJson.EUR){
+         document.getElementById("EUR").innerHTML = "<font color='red'>"+responseJson.EUR+"</font>";
+        }else{
+         document.getElementById("EUR").innerHTML = "<font color='green'>"+response.EUR+"</font>";
+        }
+        
+        if(response.GBP > responseJson.GBP){
+         document.getElementById("GBP").innerHTML = "<font color='red'>"+responseJson.GBP+"</font>";
+        }else{
+         document.getElementById("GBP").innerHTML = "<font color='green'>"+response.GBP+"</font>";
+        }
+        console.log(responseJson.EUR);
+
+        setInterval(function () {
+         $.ajax({
+     url: 'https://thirtykobo.com/api',
+     type: 'get', 
+     success: function(responseJson0){
+
+      if(responseJson.EUR > responseJson0.EUR){
+         document.getElementById("EUR").innerHTML = "<font color='red'>"+responseJson.EUR+"</font>";
+        }else{
+         document.getElementById("EUR").innerHTML = "<font color='green'>"+responseJson0.EUR+"</font>";
+        }
+        
+        if(responseJson.GBP > responseJson.GBP){
+         document.getElementById("GBP").innerHTML = "<font color='red'>"+responseJson.GBP+"</font>";
+        }else{
+         document.getElementById("GBP").innerHTML = "<font color='green'>"+responseJson0.GBP+"</font>";
+        }
+
+     }
+         })
+}, 2000)
+     
+     }
+   })
+
+        }, 2000);
+
+
+     }
+    });
+   }
+   
+   $(document).ready(function(){
+    setInterval(fetchdata,20000);
+   });
+</script>
+
+
+
+
+
+
+
+
         <div class="market section-padding page-section" data-scroll-index="2">
             <div class="container">
                 <div class="row py-lg-5 justify-content-center">
@@ -290,6 +402,115 @@ $abuja_eur_live = $abuja_usd * $eur;
                             <span>Explore</span>
                             <h3>The Nigeria's Leading Foreign Exchange updates platform</h3>
                             <p>Real-time updates at your fingertips</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="market-table">
+                                <div class="d-flex justify-content-between mb-3">
+                                        <div class="buyer-info">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <h4>Lagos/Airport</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                  <!--  <div class="seller-info text-right">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <h5>Live Update</h5>
+                                                    <a href="#">{{$ldate = date('d-m-Y')}}</a>
+                                                </div> 
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table mb-0 table-responsive-sm">
+                                            <thead>
+                                                <tr>
+                                                
+                                                   <th>    
+                                                        <div class="media">
+                                                            <!--<img class="mr-3" src="./images/ngn.png" alt="" width="30"><br>-->
+                                                            <div class="media-body">
+                                                                <h5>Live Update</h5>
+                                                                <h6>{{$ldate = date('d-m-Y')}}</h6>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="media">
+                                                            <div class="media-body">
+                                                                <h4>Buy</h4>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="media">
+                                                            <div class="media-body">
+                                                                <h4>Sell</h4>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    
+                                                    <td >
+                                                        <span><h4><img class="mr-3" src="./images/usd.png" alt="" width="25">1 USD</h4></span>
+                                                    </td>
+
+                                                    <td>
+                                                        {{ $airport_usd }}
+                                                    </td>
+
+                                                    <td>
+                                                    {{ $airport_usd }}
+                                                    </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                               
+                                                    <td>
+                                                    <span><h4><img class="mr-3" src="./images/eur.png" alt="" width="25">1 EUR</h4></span>
+                                                    </td>
+
+                                                    <td>
+                                                    {{ $island_usd }}
+                                                    </td>
+
+                                                    <td>
+                                                    {{ (round($island_eur_live,2)) }}
+                                                    </td>
+
+                                                  
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td>
+                                                    <span><h4><img class="mr-3" src="./images/gdp.png" alt="" width="25">1 GBP</h4></span>
+                                                    </td>
+
+                                                    <td>
+                                                    {{ $victoria_usd }}
+                                                    </td>
+
+                                                    <td>
+                                                    {{ (round($island_eur_live,2)) }}
+                                                    </td>
+
+                                                   
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -834,7 +1055,7 @@ $abuja_eur_live = $abuja_usd * $eur;
 
     </div>
 
-    <div class="cookie_alert">
+   <!-- <div class="cookie_alert">
 
         <div class="alert alert-light fade show">
             <p>
@@ -844,7 +1065,7 @@ $abuja_eur_live = $abuja_usd * $eur;
             </p>
             <button class="btn btn-success btn-block" data-dismiss="alert">Accept</button>
         </div>
-    </div>
+    </div> -->
 
 
 

@@ -26,6 +26,16 @@ class UpdatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function api()
+    {
+        return view('partials.api');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
