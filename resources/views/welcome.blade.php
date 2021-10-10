@@ -2740,7 +2740,7 @@ function fetchdata(){
  } );
 });
 
-</script>
+</script> 
 
 
 
