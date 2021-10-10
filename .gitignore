@@ -38,7 +38,7 @@ yarn.lock
 /public/hot
 /public/storage
 /storage/*.key
-/vendor
+###/vendor
 /storage/debugbar
 /storage/framework
 /storage/logs
