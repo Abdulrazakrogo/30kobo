@@ -163,4 +163,17 @@ class User extends Authenticatable
     {
         return $this->profiles()->detach($profile);
     }
+
+      // user has many posts
+    public function posts()
+    {
+        return $this->hasMany('App\Posts', 'author_id');
+    }
+
+    // user has many comments
+    public function comments()
+    {
+        return $this->hasMany('App\Comments', 'from_user');
+    }
+
 }

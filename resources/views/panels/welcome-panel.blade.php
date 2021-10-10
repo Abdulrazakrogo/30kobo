@@ -36,8 +36,8 @@
         <?php
 // set API Endpoint and API key 
 $endpoint = 'latest';
-$api_key = 'a6bb4b1df7d2b18bcb1d56778654cb87';
-$base_currency = 'EUR';
+$api_key = '8453e58a709c1d807524403a28cfb813';
+$base_currency = 'GBP';
 
 // Initialize CURL:
 $curl = curl_init("http://data.fixer.io/api/$endpoint?access_key=$api_key&base=$base_currency");
@@ -52,8 +52,8 @@ $result = json_decode($json, true);
 
 // Accessing the exchange rate values, e.g. USD from response.:
 
-$usd = $result['rates']['GBP'];
-$eur = $result['rates']['USD'];
+$usd = $result['rates']['USD'];
+$eur = $result['rates']['EUR'];
 $usd_blackM = $usd+20;
 //echo "USD black market".$usd_blackM;
 
@@ -81,16 +81,16 @@ $abuja_eur_live = $abuja_usd * $eur;
                     <div class="card">
                         <h5 class="card-header">CBN Rates</h5>
                         <div class="card-body">
-                            <h5 class="pull-right card-title">GDP: 532, </h5>
-                            <h5 class="card-title">USD: 345</h5>
-                            <h5 class="card-title">EUR: 432</h5>
+                            <h5 class="pull-right card-title">GBP: </h5>
+                            <h5 class="card-title">USD: </h5>
+                            <h5 class="card-title">EUR: </h5>
                             <p class="card-text text-success">Official Rates</p>
                         </div>
                         </div>
                 </div>
                 <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-4">
                     <div class="card">
-                        <h5 class="card-header">Lagos/Airport</h5>
+                        <h5 class="card-header">Lagos/Airport {{$usd}} {{$eur}}</h5>
                         <div class="card-body">
                             <h5 class="pull-right card-title">GBP: {{ (round($airport_gdp_live,2)) }}</h5>
                             <h5 class="card-title">USD: {{ $airport_usd }}</h5>
@@ -103,7 +103,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                     <div class="card">
                         <h5 class="card-header">Lagos/lagos Island</h5>
                         <div class="card-body">
-                            <h5 class="pull-right card-title">GDP: {{ (round($island_gdp_live,2)) }}</h5>
+                            <h5 class="pull-right card-title">GBP: {{ (round($island_gdp_live,2)) }}</h5>
                             <h5 class="card-title">USD: {{ $island_usd }}</h5>
                             <h5 class="card-title">EUR: {{ (round($island_eur_live,2)) }}</h5>
                             <p class="card-text text-success">Black Market Rates</p>
@@ -118,7 +118,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                     <div class="card">
                         <h5 class="card-header">Lagos Victoria Island</h5>
                         <div class="card-body">
-                            <h5 class="pull-right card-title">GDP: {{ (round($island_gdp_live,2)) }}</h5>
+                            <h5 class="pull-right card-title">GBP: {{ (round($island_gdp_live,2)) }}</h5>
                             <h5 class="card-title">USD: {{ $victoria_usd }}</h5>
                             <h5 class="card-title">EUR: {{ (round($island_eur_live,2)) }}</h5>
                             <p class="card-text text-success">Black Market Rates</p>
@@ -129,7 +129,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                     <div class="card">
                         <h5 class="card-header">Kano</h5>
                         <div class="card-body">
-                            <h5 class="pull-right card-title">GDP: {{ (round($kano_gdp_live,2)) }}</h5>
+                            <h5 class="pull-right card-title">GBP: {{ (round($kano_gdp_live,2)) }}</h5>
                             <h5 class="card-title">USD: {{ $kano_usd }}</h5>
                             <h5 class="card-title">EUR: {{ (round($kano_eur_live,2)) }}</h5>
                             <p class="card-text text-success">Black Market Rates</p>
@@ -140,7 +140,7 @@ $abuja_eur_live = $abuja_usd * $eur;
                     <div class="card">
                         <h5 class="card-header">Abuja</h5>
                         <div class="card-body">
-                            <h5 class="pull-right card-title">GDP: {{ (round($abuja_gdp_live,2)) }}</h5>
+                            <h5 class="pull-right card-title">GBP: {{ (round($abuja_gdp_live,2)) }}</h5>
                             <h5 class="card-title">USD: {{ $abuja_usd }}</h5>
                             <h5 class="card-title">EUR: {{ (round($abuja_eur_live,2)) }}</h5>
                             <p class="card-text text-success">Black Market Rates</p>
@@ -171,15 +171,15 @@ $abuja_eur_live = $abuja_usd * $eur;
                       </thead>
                       <tbody>
                         
-                        @foreach($updates as $update)
+                        @foreach($bmupdates as $bmupdate)
                             <tr>
-                                <td>{{$update->updated_at}}</td>
-                                <td>{{$update->island_usd}}</td>
-                                <td>{{$update->airport_usd}}</td>
-                                <td>{{$update->island_usd}}</td>
-                                <td>{{$update->victoria_usd}}</td>
-                                <td>{{$update->kano_usd}}</td>
-                                <td>{{$update->abuja_usd}}</td>
+                                <td>{{$bmupdate->updated_at}}</td>
+                                <td>{{$bmupdate->island_usd}}</td>
+                                <td>{{$bmupdate->airport_usd}}</td>
+                                <td>{{$bmupdate->island_usd}}</td>
+                                <td>{{$bmupdate->victoria_usd}}</td>
+                                <td>{{$bmupdate->kano_usd}}</td>
+                                <td>{{$bmupdate->abuja_usd}}</td>
                                 <td>
                             </tr>
                         @endforeach

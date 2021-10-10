@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3",
         "ext-intl": "*",
+        "beyondcode/laravel-websockets": "^1.12",
         "creativeorange/gravatar": "^1.0",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
@@ -32,6 +33,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.2",
         "laravelcollective/html": "^6.1",
+        "livewire/livewire": "^2.4",
         "pusher/pusher-php-server": "^4.1",
         "rap2hpoutre/laravel-log-viewer": "^1.4",
         "shvetsgroup/laravel-email-database-log": "^1.5",

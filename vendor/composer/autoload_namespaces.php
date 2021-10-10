@@ -10,4 +10,5 @@ return array(
     'ShvetsGroup\\LaravelEmailDatabaseLog\\' => array($vendorDir . '/shvetsgroup/laravel-email-database-log/src'),
     'Rap2hpoutre\\LaravelLogViewer\\' => array($vendorDir . '/rap2hpoutre/laravel-log-viewer/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'Evenement' => array($vendorDir . '/evenement/evenement/src'),
 );

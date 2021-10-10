@@ -6,7 +6,7 @@ header('Content-Type: application/json');
 $black_mart = '495'; // USD to NGN in black market, we fetch this from DB
 
 $endpoint = 'latest';
-$access_key = '82191452465d124d16c65fd640a682db';
+$access_key = '8f463f4e5097124b4490912b86d0ff7d';
 $base0 = 'EUR';
 $base1 = 'GBP';
 $symbols = 'USD';
@@ -48,7 +48,7 @@ echo '"GBP": ', $exchangeRates1->rates->USD*$black_mart, '}';
 <?php
 // set API Endpoint and API key 
 $endpoint = 'latest';
-$api_key = 'a6bb4b1df7d2b18bcb1d56778654cb87';
+$api_key = '8f463f4e5097124b4490912b86d0ff7d';
 $base_currency = 'EUR';
 
 // Initialize CURL:

@@ -7,6 +7,8 @@
         <meta name="theme-color" content="#4646ff" />
         {{-- CSRF Token --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.6/tailwind.min.css">
+
 
         <title>@hasSection('template_title')@yield('template_title') | @endif {{ config('app.name', Lang::get('titles.app')) }}</title>
         <meta name="description" content="">
@@ -69,6 +71,7 @@
                 </div>
 
                 @yield('content')
+                @livewireScripts
 
             </main>
 
