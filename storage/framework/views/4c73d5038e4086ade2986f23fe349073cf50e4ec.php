@@ -261,7 +261,7 @@ $qar = $exchangeRates['rates']['QAR'];
                                             <div class="media">
                                                 <div class="media-body">
                                                     <h5>Live Update</h5>
-                                                    <a href="#">{{$ldate = date('d-m-Y')}}</a>
+                                                    <a href="#"><?php echo e($ldate = date('d-m-Y')); ?></a>
                                                 </div> 
                                             </div>
                                         </div> -->
@@ -455,7 +455,7 @@ $qar = $exchangeRates['rates']['QAR'];
                                             <div class="media">
                                                 <div class="media-body">
                                                     <h5>Live Update</h5>
-                                                    <a href="#">{{$ldate = date('d-m-Y')}}</a>
+                                                    <a href="#"><?php echo e($ldate = date('d-m-Y')); ?></a>
                                                 </div> 
                                             </div>
                                         </div> -->
@@ -650,7 +650,7 @@ $qar = $exchangeRates['rates']['QAR'];
                                             <div class="media">
                                                 <div class="media-body">
                                                     <h5>Live Update</h5>
-                                                    <a href="#">{{$ldate = date('d-m-Y')}}</a>
+                                                    <a href="#"><?php echo e($ldate = date('d-m-Y')); ?></a>
                                                 </div> 
                                             </div>
                                         </div> -->
@@ -843,7 +843,7 @@ $qar = $exchangeRates['rates']['QAR'];
                                             <div class="media">
                                                 <div class="media-body">
                                                     <h5>Live Update</h5>
-                                                    <a href="#">{{$ldate = date('d-m-Y')}}</a>
+                                                    <a href="#"><?php echo e($ldate = date('d-m-Y')); ?></a>
                                                 </div> 
                                             </div>
                                         </div> -->
@@ -1038,7 +1038,7 @@ $qar = $exchangeRates['rates']['QAR'];
                                             <div class="media">
                                                 <div class="media-body">
                                                     <h5>Live Update</h5>
-                                                    <a href="#">{{$ldate = date('d-m-Y')}}</a>
+                                                    <a href="#"><?php echo e($ldate = date('d-m-Y')); ?></a>
                                                 </div> 
                                             </div>
                                         </div> -->
@@ -1231,7 +1231,7 @@ $qar = $exchangeRates['rates']['QAR'];
                                             <div class="media">
                                                 <div class="media-body">
                                                     <h5>Live Update</h5>
-                                                    <a href="#">{{$ldate = date('d-m-Y')}}</a>
+                                                    <a href="#"><?php echo e($ldate = date('d-m-Y')); ?></a>
                                                 </div> 
                                             </div>
                                         </div> -->
@@ -2744,4 +2744,4 @@ function fetchdata(){
 
 
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\thirtykobo\resources\views/welcome.blade.php ENDPATH**/ ?>
